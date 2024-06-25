@@ -24,6 +24,22 @@ class catalogo_peliculas:
     def agregar_pelicula(self, pelicula):
         self.peliculas.append(pelicula)
 
+  def guardar_peliculas(self):
+        with open("catalogo.txt","w")as archivo:
+          for pelicula in self.peliculas:
+              archivo.write(f"{pelicula.nombre},{pelicula.director},{pelicula.año}\n")
+
+
+    def listar_peliculas(self):
+        if not self.peliculas:
+            print("No hay películas en el catálogo.")
+        else:
+            for pelicula in self.peliculas:
+                print(f"Título: {pelicula.nombre}, Director: {pelicula.director}, Año: {pelicula.año}")
+
+    def eliminar_catalogo(self):
+        print("Catálogo de películas eliminado.")
+
     
 
 
