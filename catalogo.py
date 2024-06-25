@@ -29,12 +29,7 @@ class catalogo_peliculas:
             self.nombre = nombre
             self.peliculas = []
 
-    def mostrar_menu(self):
-        print("\n--- Menú de opciones:---")
-        print("1. Agregar una película")
-        print("2. Mostrar películas")
-        print("3.Eliminar catalogo de peliculas")
-        print("4.salir")
+
 
  
 
