@@ -24,10 +24,7 @@ class catalogo_peliculas:
     def agregar_pelicula(self, pelicula):
         self.peliculas.append(pelicula)
 
-    class catalogo_peliculas:
-        def __init__(self, nombre):
-            self.nombre = nombre
-            self.peliculas = []
+    
 
 
 
