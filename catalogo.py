@@ -24,7 +24,7 @@ class catalogo_peliculas:
     def agregar_pelicula(self, pelicula):
         self.peliculas.append(pelicula)
 
-  def guardar_peliculas(self):
+    def guardar_peliculas(self):
         with open("catalogo.txt","w")as archivo:
           for pelicula in self.peliculas:
               archivo.write(f"{pelicula.nombre},{pelicula.director},{pelicula.año}\n")
@@ -39,6 +39,34 @@ class catalogo_peliculas:
 
     def eliminar_catalogo(self):
         print("Catálogo de películas eliminado.")
+
+    def main():
+        nombre_catalogo= input("Ingrese el nombre del catalogo de la pelicula ")
+        catalogo = catalogo_peliculas(nombre_catalogo)
+
+        while True:
+           catalogo.mostrar_menu()
+           opcion = input("Seleccionar una opcion: ")
+
+           if opcion == "1":
+            titulo = input("ingresa el titulo de la pelicula:")
+            director = input("ingresa el director de la pelicula:")
+            año = input("ingresa el año de estreno de la pelicula:")
+            pelicula_nueva = pelicula(titulo,director,año)
+            catalogo.agregar_pelicula(pelicula_nueva)
+           elif opcion == "2":
+            catalogo.listar_peliculas()
+           elif opcion == "3":
+            catalogo.eliminar_catalogo()
+           elif opcion == "4":
+            print("Saliendo. Gracias por usar el programa")
+            break
+           else:
+            print("Opcion no valida. Por favor, intente de nuevo")
+
+
+if __name__ == "__main__":
+     main()
 
     
 
